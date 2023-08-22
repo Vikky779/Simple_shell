@@ -51,7 +51,7 @@ void _puts(char *s)
 	int k = 0;
 
 	if (!s)
-		return;
+	return;
 	while (s[k] != '\0')
 	{
 	_putchar(s[k]);
