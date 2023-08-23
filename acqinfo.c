@@ -4,7 +4,7 @@
 * clr_inf - initializes inf_t struct
 * @inf: struct address
 */
-void clr_inf(info_t *inf)
+void clr_inf(inf_t *inf)
 {
 	inf->arg = NULL;
 	inf->argv = NULL;
@@ -17,7 +17,7 @@ void clr_inf(info_t *inf)
 * @inf: struct address
 * @bf: argument vector
 */
-void set_inf(info_t *inf, char **bf)
+void set_inf(inf_t *inf, char **bf)
 {
 	int e = 0;
 
@@ -48,7 +48,7 @@ void set_inf(info_t *inf, char **bf)
 * @inf: struct address
 * @tod: true if freeing all fields
 */
-void free_inf(info_t *inf, int tod)
+void free_inf(inf_t *inf, int tod)
 {
 	ffree(inf->argv);
 	inf->argv = NULL;

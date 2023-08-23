@@ -188,9 +188,9 @@ int _getline(info_t *, char **, size_t *);
 void sigintHandler(int);
 
 /* viay_acqinfo.c */
-void clr_inf(info_t *);
-void set_inf(info_t *, char **);
-void free_inf(info_t *, int);
+void clr_inf(inf_t *);
+void set_inf(inf_t *, char **);
+void free_inf(inf_t *, int);
 
 /* viay_environ.c */
 char *_getenvi(info_t *, const char *);
