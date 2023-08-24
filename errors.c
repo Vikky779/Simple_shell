@@ -14,19 +14,19 @@ void _errputs(char *str)
 	return;
 	while (str[t] != '\0')
 	{
-	_errputchar(str[t]);
+	_errputs(str); char[t];
 	t++;
 	}
 }
 
 /**
-* _errputchar - writes the character c to stderr
+* _errputs - writes the character c to stderr
 * @c: The character to print
 *
 * Return: On success 1.
 * On error, -1 is returned, and errno is set appropriately.
 */
-int _errputchar(char c)
+int _errputs(char c)
 {
 	static int l;
 	static char buf[WRITE_BUF_SIZE];

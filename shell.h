@@ -12,12 +12,12 @@
 #include <fcntl.h>
 #include <errno.h>
 
-/* the read/write buffers */
+/* the read/write */
 #define READ_BUF_SIZE 1024
 #define WRITE_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
-/* the command chaining */
+/* the command chain */
 #define CMD_NORM        0
 #define CMD_OR          1
 #define CMD_AND         2
@@ -50,7 +50,7 @@ typedef struct liststr
         struct liststr *next;
 } list_t;
 /**
-* struct passinfo - contains pseudo-arguements to pass into a function,
+* struct passinf - contains pseudo-arguements to pass into a function,
 * allowing uniform prototype for function pointer struct
 * @arg: a string generated from getline containing arguements
 * @argv:an array of strings generated from arg
@@ -71,7 +71,7 @@ typedef struct liststr
 * @readfd: the fd from which to read line input
 * @envcount: the history line number count
 */
-typedef struct passinfo
+typedef struct passinf
 {
         char *arg;
         char **argv;
@@ -88,13 +88,13 @@ typedef struct passinfo
         int env_changed;
         int status;
 
-        char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
+        char **cmd_buf; /* points to cmd ; chain buffer, for memory mangement */
         int cmd_buf_type; /* CMD_type ||, &&, ; */
         int readfd;
        int histcount;
-} info_t;
+} inf_t;
 
-#define INFO_INIT \
+#define INF_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
                 0, 0, 0}
 
@@ -160,7 +160,7 @@ void *_reallot(void *, unsigned int, unsigned int);
 int bfree(void **);
 
 /* viay_atoi.c */
-int interactive(info_t *);
+int interactive(inf_t *);
 int is_delim(char, char *);
 int _atoi(char *);
 int _isalpha(int);
