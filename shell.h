@@ -168,48 +168,48 @@ int _isalpha(int);
 
 /* viay_errors1.c */
 int _eratoi(char *);
-void print_err(inf_t *, char *);
+void print_err(info_t *, char *);
 int print_f(int, int);
 char *convert_number(long int, int, int);
 void remove_comments(char *);
 
 /* viay_builtin.c */
- int _miexit(inf_t *);
-int _micd(inf_t *);
-int _mihelp(inf_t *);
+ int _miexit(info_t *);
+int _micd(info_t *);
+int _mihelp(info_t *);
 
 /* viay_builtin1.c */
-int _myhistory(inf_t *);
-int _dalias(inf_t *);
+int _myhistory(info_t *);
+int _dalias(info_t *);
 
 /*viay_gtline.c */
-ssize_t get_input(inf_t *);
-int _getline(inf_t *, char **, size_t *);
+ssize_t get_input(info_t *);
+int _getline(info_t *, char **, size_t *);
 void sigintHandler(int);
 
 /* viay_acqinfo.c */
-void clr_inf(inf_t *);
-void set_inf(inf_t *, char **);
-void free_inf(inf_t *, int);
+void clr_inf(info_t *);
+void set_inf(info_t *, char **);
+void free_inf(info_t *, int);
 
 /* viay_environ.c */
-char *_getenvi(inf_t *, const char *);
-int _envi(inf_t *);
-int _setenvi(inf_t *);
-int _unsetenvi(inf_t *);
-int populate_envi_list(inf_t *);
+char *_getenvi(info_t *, const char *);
+int _envi(info_t *);
+int _setenvi(info_t *);
+int _unsetenvi(info_t *);
+int populate_envi_list(info_t *);
 
 /* viay_getenv.c */
-char **get_environ(inf_t *);
-int _unsetenv(inf_t *, char *);
-int _setenv(inf_t *, char *, char *);
+char **get_environ(info_t *);
+int _unsetenv(info_t *, char *);
+int _setenv(info_t *, char *, char *);
 
 /* viay_events.c */
-char *get_events_file(inf_t *inf);
-int write_events(inf_t *inf);
-int read_events(inf_t *inf);
-int build_evenys_list(inf_t *inf, char *buf, int linecount);
-int renumber_events(inf_t *inf);
+char *get_events_file(info_t *inf);
+int write_events(info_t *inf);
+int read_events(info_t *inf);
+int build_evenys_list(info_t *inf, char *buf, int linecount);
+int renumber_events(info_t *inf);
 
 /* viay_list.c */
 list_t *add_sec(list_t **, const char *, int);
