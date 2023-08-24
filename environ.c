@@ -45,7 +45,7 @@ int _setenvi(info_t *inf)
 		_eputs("Incorrect number of arguements\n");
 		return (1);
 	}
-	if (_setenvi(info, inf->argv[1], inf->argv[2]))
+	if (_setenvi(inf, inf->argv[1], inf->argv[2]))
 		return (0);
 	return (1);
 }
