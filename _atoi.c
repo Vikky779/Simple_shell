@@ -1,12 +1,9 @@
 #include "shell.h"
-
 /**
 * interactive - returns true if interactive mode
 * @inf: struct address
-*
 * Return: 1 if interactive mode, 0 otherwise
 */
-
 int interactive(inf_t *inf)
 {
 	return (isatty(STDIN_FILENO) && inf->readfd <= 2);
@@ -40,13 +37,11 @@ int _isalpha(int t)
 	else
 	return (0);
 }
-
 /**
 * _atoi - converts a string to an integer
 * @s: the string to be converted
 * Return: 0 if no numbers in string, converted number otherwise
 */
-
 int _atoi(char *s)
 {
 	int l, sign = 1, flag = 0, output;

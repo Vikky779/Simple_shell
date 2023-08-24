@@ -1,9 +1,7 @@
 #include "shell.h"
-
 /**
  * _miexit - Exit the shell
  * @inf: Pointer to info_t structure.
- *
  * This function exits using information provided in the inf parameter.
  * Return: exit with a given exit status
  */
