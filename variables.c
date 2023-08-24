@@ -1,12 +1,12 @@
 #include "shell.h"
-
+#include <stddef.h>
+#include <stdlib.h>
 /**
-* is_trail - test if current char in buffer is a chain delimeter
-* @inf: the parameter struct
-* @buf: the char buffer
-* @n: address of current position in buf
-*
-* Return: 1 if chain delimeter, 0 otherwise
+* is_trail - Test if current char in buffer is a chain delimeter
+* @inf: Parameter struct
+* @buf: Char buffer
+* @n: Address of current position in buf
+* Return: Return 1 if it is  chain delimeter, 0 otherwise
 */
 int is_trail(inf_t *inf, char *buf, size_t *n)
 {
@@ -36,13 +36,12 @@ int is_trail(inf_t *inf, char *buf, size_t *n)
 }
 
 /**
-* check_trail - checks we should continue chaining based on last status
-* @inf: the parameter struct
-* @buf: the char buffer
-* @j: address of current position in buf
-* @l: starting position in buf
-* @len: length of buf
-*
+* check_trail - checks to continue chaining based on last status
+* @inf: Parameter struct
+* @buf: Char buffer
+* @j: Address of current position in buf
+* @l: Starting position in buf
+* @len: Length of buf
 * Return: Void
 */
 void check_trail(inf_t *inf, char *buf, size_t *j, size_t l, size_t len)
@@ -72,7 +71,6 @@ void check_trail(inf_t *inf, char *buf, size_t *j, size_t l, size_t len)
 /**
 * replace_alias - replaces an aliases in the tokenized string
 * @inf: the parameter struct
-*
 * Return: 1 if replaced, 0 otherwise
 */
 int replace_alias(inf_t *inf)
@@ -99,9 +97,8 @@ int replace_alias(inf_t *inf)
 }
 
 /**
-* replace_var - replaces vars in the tokenized string
+* replace_var -This replaces vars in the tokenized string
 * @inf: the parameter struct
-*
 * Return: 1 if replaced, 0 otherwise
 */
 int replace_var(inf_t *inf)
@@ -122,7 +119,7 @@ int replace_var(inf_t *inf)
 	}
 	if (!_strcmp(inf->argv[l], "$$"))
 	{
-	replace_string(&(inf->argv[i]),
+	replace_string(&(inf->argv[l]),
 	_strdup(convert_number(getpid(), 10, 0)));
 	continue;
 	}
@@ -140,10 +137,9 @@ int replace_var(inf_t *inf)
 }
 
 /**
-* replace_string - replaces string
+* replace_string - To replace string
 * @prv: address of old string
 * @lst: new string
-*
 * Return: 1 if replaced, 0 otherwise
 */
 int replace_string(char **prv, char *lst)
